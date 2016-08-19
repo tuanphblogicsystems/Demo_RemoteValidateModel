@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
+
 namespace Demo_RemoteValidateModel.Models
 {
     public class ExternalLoginConfirmationViewModel
@@ -67,6 +68,7 @@ namespace Demo_RemoteValidateModel.Models
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
+        [System.Web.Mvc.Remote("CheckExistsEmail","Account",ErrorMessage ="Email alredy exists !")]
         public string Email { get; set; }
 
         [Required]
